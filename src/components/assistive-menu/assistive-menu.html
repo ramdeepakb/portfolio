@@ -1,0 +1,28 @@
+<div class="assistive"
+     [ngStyle]="{ left: x() + 'px', top: y() + 'px' }"
+     (pointerdown)="onPointerDown($event)"
+     (pointermove)="onPointerMove($event)"
+     (pointerup)="onPointerUp($event)"
+     (pointercancel)="onPointerUp($event)">
+<div class="fab-container" [class.open]="open()">
+  <div class="radial-wrapper">
+    <button type="button"
+            #toggleBtn
+            class="fab btn btn-primary rounded-circle shadow-lg"
+            (click)="toggleOpen()">
+      <i class="bi" [class.bi-grid-3x3-gap-fill]="!open()" [class.bi-x-lg]="open()"></i>
+    </button>
+
+    <ul class="radial-menu list-unstyled m-0 p-0" [class.open]="open()">
+      <li *ngFor="let m of menu; let i = index"
+          [style.transform]="getItemTransform(i)">
+        <a [href]="m.target" (click)="closeMenu()">
+          <i class="bi" [class]="m.icon"></i>
+          <span class="label">{{ m.label }}</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+</div>

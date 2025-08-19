@@ -1,0 +1,126 @@
+.assistive {
+  position: fixed;
+  z-index: 1050;
+  touch-action: none;
+  width: 200px;         /* ensure container size */
+  height: 200px;
+  display: flex;        /* center child FAB */
+  align-items: center;
+  justify-content: center;
+}
+
+/* keep FAB centered */
+.fab {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: #0d6efd;
+  color: #fff;
+  font-size: 22px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  position: absolute;   /* ✅ change: keep it pinned center */
+  top: 50%;             /* ✅ */
+  left: 50%;            /* ✅ */
+  transform: translate(-50%, -50%); /* ✅ */
+  z-index: 1100;
+}
+
+.fab:active {
+  transform: translate(-50%, -50%) scale(1.1); /* ✅ preserve centering */
+}
+
+.radial-menu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  pointer-events: none;
+}
+
+.radial-menu li {
+  position: absolute;
+  opacity: 0;
+  transform: translate(0, 0);
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.3s;
+}
+
+.radial-menu.open li {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.radial-menu a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  color: #0d6efd;
+  font-size: 20px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+  overflow: visible;
+}
+
+.radial-menu a:hover {
+  background: #f0f0f0;
+  transform: scale(1.1);
+}
+
+.radial-menu a .label {
+  position: absolute;
+  left: 55px;
+  white-space: nowrap;
+  background: #fff;
+  padding: 4px 8px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateX(-10px);
+  pointer-events: none;
+  transition: all 0.25s ease;
+  font-size: 14px;
+  color: #333;
+}
+
+.radial-menu a:hover .label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fab,
+.radial-menu li {
+  transition: transform 0.4s ease-in-out;
+}
+
+@media (max-width: 576px) {
+  .fab {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .radial-menu a {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .radial-menu a .label {
+    font-size: 12px;
+    left: 50px;
+  }
+}

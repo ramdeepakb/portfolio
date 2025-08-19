@@ -1,1 +1,113 @@
-/* You can add global styles to this file, and also import other style files */
+
+:root {
+  --bg: #ffffff;
+  --text: #161616;
+  --card: #f8f9fa;
+  --accent: #0d6efd;
+}
+
+:root[data-theme="dark"] {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --card: #1b1f2a;
+  --accent: #66b2ff;
+}
+
+html, body { height: 100%; }
+body {
+  background: var(--bg) !important;
+  color: var(--text) !important;
+}
+
+.bg-body { background-color: var(--bg) !important; }
+.text-body { color: var(--text) !important; }
+.card-theme { background-color: var(--card); border: 1px solid rgba(0,0,0,0.05); }
+.link-accent { color: var(--accent) !important; }
+
+.section {
+  padding: 4rem 0;
+}
+
+.hero {
+  padding: 6rem 0 4rem 0;
+}
+
+.avatar {
+  width: 120px; height: 120px; border-radius: 50%; object-fit: cover;
+  border: 3px solid var(--accent);
+}
+
+.footer {
+  border-top: 1px solid rgba(0,0,0,0.1);
+  padding: 2rem 0;
+  margin-top: 3rem;
+}
+
+.badge-skill {
+  margin: .25rem;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bs-light);
+  color: var(--bs-dark);
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+/* Section styling */
+section {
+  padding: 80px 20px;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Floating Assistive Button */
+.assistive-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #007bff;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: grab;
+  z-index: 1000;
+  transition: background 0.3s;
+}
+.assistive-button:hover {
+  background: #0056b3;
+}
+
+/* Menu items */
+.assistive-menu {
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+.assistive-menu a {
+  background: white;
+  border-radius: 20px;
+  padding: 8px 15px;
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  color: #333;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.assistive-menu a:hover {
+  background: #f8f9fa;
+}

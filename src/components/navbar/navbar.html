@@ -1,0 +1,27 @@
+
+<!-- <nav class="navbar navbar-expand-lg" [class.navbar-dark]="theme.current==='dark'" [class.bg-dark]="theme.current==='dark'" [class.navbar-light]="theme.current==='light'" [class.bg-light]="theme.current==='light'"> -->
+  <nav>
+  <div class="container">
+    <a class="navbar-brand fw-bold" routerLink="/">MyPortfolio</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="nav" class="collapse navbar-collapse">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a routerLink="/" routerLinkActive="active" class="nav-link" [routerLinkActiveOptions]="{exact:true}">Home</a></li>
+        <li class="nav-item"><a routerLink="/about" routerLinkActive="active" class="nav-link">About</a></li>
+        <li class="nav-item"><a routerLink="/education" routerLinkActive="active" class="nav-link">Education</a></li>
+        <li class="nav-item"><a routerLink="/projects" routerLinkActive="active" class="nav-link">Projects</a></li>
+        <li class="nav-item"><a routerLink="/experience" routerLinkActive="active" class="nav-link">Experience</a></li>
+        <li class="nav-item"><a routerLink="/certifications" routerLinkActive="active" class="nav-link">Certifications</a></li>
+        <li class="nav-item"><a routerLink="/achievements" routerLinkActive="active" class="nav-link">Achievements</a></li>
+        <li class="nav-item"><a routerLink="/hobbies" routerLinkActive="active" class="nav-link">Hobbies</a></li>
+        <li class="nav-item"><a routerLink="/contact" routerLinkActive="active" class="nav-link">Feedback</a></li>
+      </ul>
+      <!-- <button class="btn btn-outline-primary" (click)="toggleTheme()">
+        <i class="bi" [class.bi-moon]="theme.current==='light'" [class.bi-sun]="theme.current==='dark'"></i>
+        <span class="ms-1">{{ theme.current==='light' ? 'Dark' : 'Light' }} Mode</span>
+      </button> -->
+    </div>
+  </div>
+</nav>
